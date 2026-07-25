@@ -1,0 +1,11 @@
+import api from './api.js'
+export const getAllAlarms=()=>api.get('/admin/alarms')
+export const getActiveAlarms=()=>api.get('/admin/alarms/active')
+export const acknowledgeAlarm=(id)=>api.patch(`/admin/alarms/${id}/acknowledge`)
+export const resolveAlarm=(id)=>api.patch(`/admin/alarms/${id}/resolve`)
+export const getAllMembers=()=>api.get('/admin/members')
+export const deactivateMember=(id)=>api.patch(`/admin/members/${id}/deactivate`)
+export const activateMember=(id)=>api.patch(`/admin/members/${id}/activate`)
+export const getAllCameras=()=>api.get('/admin/cameras')
+export const updateCameraStatus=(id,status)=>api.patch(`/admin/cameras/${id}/status`,{status})
+export const getAllHouses=()=>api.get('/admin/houses')
